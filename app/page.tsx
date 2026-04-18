@@ -18,7 +18,7 @@ export default function Home() {
           <h2 className="text-lg">Acara</h2>
           <p>Akad: 08.00 WIB</p>
           <p>Resepsi: 11.00 WIB</p>
-          <p>Bandung</p>
+          <p>Jakarta</p>
         </div>
 
       </div>
