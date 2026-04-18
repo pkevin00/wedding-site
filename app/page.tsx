@@ -1,27 +1,29 @@
+"use client";
+import { useState } from "react";
+
 export default function Home() {
+  const [opened, setOpened] = useState(false);
+
   return (
-    <main className="min-h-screen text-white flex justify-center px-4 bg-neutral-950">
-      <div className="w-full max-w-md space-y-6 py-10">
+    <main className="min-h-screen text-white bg-neutral-950 flex justify-center px-4">
 
-        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 text-center">
-          <p className="text-sm opacity-70">Undangan Pernikahan</p>
-          <h1 className="text-3xl font-semibold mt-2">Kevin & Yoga</h1>
-          <p className="mt-2 text-sm opacity-80">27 September 2026</p>
+      {!opened && (
+        <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+          <button
+            onClick={() => setOpened(true)}
+            className="bg-white text-black px-6 py-3 rounded-full"
+          >
+            Buka Undangan
+          </button>
         </div>
+      )}
 
-        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 text-center">
-          <h2 className="text-lg mb-2">Menuju Hari Bahagia</h2>
-          <p className="text-2xl font-bold">120 Hari Lagi</p>
+      {opened && (
+        <div className="w-full max-w-md py-10">
+          <h1 className="text-center text-3xl">Aldi & Sinta</h1>
         </div>
+      )}
 
-        <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 text-center">
-          <h2 className="text-lg">Acara</h2>
-          <p>Akad: 08.00 WIB</p>
-          <p>Resepsi: 11.00 WIB</p>
-          <p>Jakarta</p>
-        </div>
-
-      </div>
     </main>
   );
 }
